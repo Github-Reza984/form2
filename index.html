@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/index.css">
+  <title>Form</title>
+  <script type="text/JavaScript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script>
+    src = "https://code.jquery.com/jquery-3.4.1.js"
+    integrity = "sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin = "anonymous"
+  </script>
+  <script>
+    function SubForm() {
+      $.ajax({
+        url: "https://api.apispreadsheets.com/data/8343/",
+        type: "post",
+        data: $("#myForm").serializeArray(),
+        success: function() {
+          alert("Form Data Submitted :)")
+        },
+        error: function() {
+          alert("There was an error :(")
+        }
+      });
+      $.ajax({
+        url: "https://api.apispreadsheets.com/data/8388/",
+        type: "post",
+        data: $("#myForm").serializeArray(),
+        success: function() {
+          alert("Form Data Submitted :)")
+        },
+        error: function() {
+          alert("There was an error :(")
+        }
+      });
+      $.ajax({
+        url: "https://api.apispreadsheets.com/data/8389/",
+        type: "post",
+        data: $("#myForm").serializeArray(),
+        success: function() {
+          alert("Form Data Submitted :)")
+        },
+        error: function() {
+          alert("There was an error :(")
+        }
+      });
+    }
+  </script>
+</head>
+
+<body>
+	 <div class="container">
+    <form id="myForm">
+      <h1>Formulir Rekap</h1>
+      <label>No</label><br>
+      <input class="No" name="No" placeholder="No Transaksi" required />
+      <br />
+      <label>Tanggal</label><br>
+      <input name="Tanggal" type="datetime-local" required />
+      <br />
+      <label>Nama_cabang</label><br>
+      <input name="Nama_cabang" placeholder="Masukan Nama Cabang di sini" required />
+      <br />
+      <label>No_sbg</label><br>
+      <input name="No_sbg" placeholder="Masukan No SBG di sini" required>
+      <br>
+      <label>Nama_nasabah</label><br>
+      <input name="Nama_nasabah" placeholder="Masukan Nama Nasabah di sini" required>
+      <br>
+      <label>Status_transaksi</label><br>
+      <select name="Status_transaksi" />
+      <option value="---">- - -</option>
+      <option value="Pelunasan">Pelunasan</option>
+      <option value="Perpanjangan">Perpanjangan</option>
+      <option value="Pelunasan_sebagian">Pelunasan_sebagian</option>
+      <option value="Gadai_baru">Gadai_baru</option>
+      </select>
+      <br>
+      <label>Jenis_barang</label><br>
+      <select name="Jenis_barang" />
+      <option value="---">- - -</option>
+      <option value="BPKB_Mobil">BPKB_Mobil</option>
+      <option value="BPKB_Motor">BPKB_Motor</option>
+      <option value="BPKB_Plus">BPKB_Plus</option>
+      <option value="Handphone/Ipad/Tab">Handphone/Ipad/Tab</option>
+      <option value="Laptop">Laptop</option>
+      <option value="Tv">Tv</option>
+      <option value="PS3">PS3</option>
+      <option value="PS4">PS4</option>
+      <option value="Elektronik_lainnya">Elektronik_lainnya</option>
+      <option value="Kamera">Kamera</option>
+      <option value="Pinjaman_ELektronik_lainnya">Pinjaman_ELektronik_lainnya</option>
+      </select>
+      <br>
+      <label>Nama_barang</label><br>
+      <input name="Nama_barang" placeholder="Masukan Nama Barang" required>
+      <br>
+      <label>Tanggal_gadai</label>
+      <input type="date" id="demo" name="Tanggal_gadai" />
+      <br>
+      <label>Nominal_pencairan_perpanjangan</label><br>
+      <input type="hidden" id="value0" value="10" />
+      <input type="text" id="qty0" size="2" value="" placeholder="Rp1,000,000.00" name="Nominal_pencairan_perpanjangan" required />
+      <br><br>
+      <input type="button" class="btn" onclick="calculate();" value="Perpanjangan">
+      <br><br>
+      <label>Nominal_pencairan_pelunasan_sebagian</label><br>
+      <input type="hidden" id="value1" value="5" />
+      <input type="text" id="qty1" size="2" value="" placeholder="Rp1,000,000.00" name="Nominal_pencairan" required />
+      <br><br>
+      <label><small>Tanggal 1 - 15 :</small></label><input type="button" class="btn" onclick="calculate0();" value="Pelunasan_sebagian">
+      <input type="hidden" id="value2" value="10" />
+	  <input type="text" id="qty2" size="2" value="" placeholder="Rp1,000,000.00" name="Nominal_pencairan" required />
+	  <br><br>
+	  <label><small>Tanggal 16 - 30 :</small></label><input type="button" class="btn" onclick="calculate1();" value="Pelunasan_sebagian">
+      <br><br>
+      <label>Pelunasan</label><br>
+      <input type="text" id="rupiah" name="Pelunasan" placeholder="Rp1,000,000.00" />
+      <br><br>
+      <label>Keterangan</label><br>
+      <textarea name="keterangan" cols="30" rows="10"></textarea>
+      <br />
+    </form><br>
+  </div>
+  <!--<div class="armor">-->
+  <button class="submit" onclick='SubForm()'>Kirim</button>
+  <!--</div>-->
+  <script src="assets/index.js"></script>
+</body>
+</html>

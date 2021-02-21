@@ -1,0 +1,139 @@
+body {
+
+    background-color: wheat;
+}
+
+
+#myForm {
+
+    width: 600px;
+    margin: auto;
+    background-color:;
+    
+}
+
+.container {
+
+    border-radius: 5px;
+    border: 5px solid red;
+    width: 700px;
+    margin: auto;
+    background-color: whitesmoke;
+}
+
+h1 {
+
+    text-align: center;
+    background-color: red;
+    color: whitesmoke;
+    border: 1px solid black;
+    border-radius: 5px;
+    animation: background 2s ease alternate infinite;
+    
+}
+
+@keyframes background {
+    
+    0% {
+
+        background-color: red;
+        color: whitesmoke;
+    }
+
+    100% {
+
+        background-color: whitesmoke;
+        color: red;
+    }
+}
+
+label {
+
+    font-size: larger;
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    padding: 5px;
+    
+}
+
+input {
+
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+    
+}
+
+select {
+
+    width: 100%;
+    height: 30px;
+}
+
+textarea {
+
+    width: 100%;
+}
+
+.btn {
+
+    width: 200px;
+    height: 50px;
+    margin-left: 0px;
+    margin-bottom: 20px;
+    border: 1px solid black;
+    border-radius: 3px;
+    box-shadow: 2px 2px grey;
+    transition: background-color .9s ease;
+    text-align: center;
+}
+
+.btn:hover {
+
+    background-color: red;
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+.submit {
+
+    width: 50%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;
+    margin-left: 25%;
+    margin-top: 20px;
+    background-color: whitesmoke;
+    color: red;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 10px;
+    /*box-shadow: 0px 10px 10px -5px grey;*/
+    box-shadow: 0px 20px 1px -15px grey;
+    transition: .5s ease;
+
+}
+
+.submit:hover {
+
+    background-color: red;
+    color: whitesmoke;
+    cursor: pointer;
+    /*margin-top: 5px;
+    box-shadow: 0px 20px 5px -10px grey;
+}
+
+.armor {
+
+    text-align: center;
+    width: 950px;
+    height: 100px;
+    margin: 5%;
+}*/
+
